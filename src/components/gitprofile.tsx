@@ -280,6 +280,12 @@ const GitProfile = ({ config }: { config: Config }) => {
                         blog={sanitizedConfig.blog}
                       />
                     )}
+                    {/* {sanitizedConfig.experiences.length !== 0 && (
+                      <ExperienceCard
+                        loading={loading}
+                        experiences={sanitizedConfig.experiences}
+                      />
+                    )} */}
                   </div>
                 </div>
               </div>

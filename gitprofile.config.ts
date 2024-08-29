@@ -2,81 +2,79 @@
 
 const CONFIG = {
   github: {
-    username: 'arifszn', // Your GitHub org/user name. (This is the only required config)
+    username: 'hrmeetsingh',
   },
   /**
    * If you are deploying to https://<USERNAME>.github.io/, for example your repository is at https://github.com/arifszn/arifszn.github.io, set base to '/'.
    * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
    * for example your repository is at https://github.com/arifszn/portfolio, then set base to '/portfolio/'.
    */
-  base: '/gitprofile/',
+  base: '/portfolio/',
   projects: {
     github: {
-      display: true, // Display GitHub projects?
+      display: true,
       header: 'Github Projects',
-      mode: 'automatic', // Mode can be: 'automatic' or 'manual'
+      mode: 'manual',
       automatic: {
-        sortBy: 'stars', // Sort projects by 'stars' or 'updated'
-        limit: 8, // How many projects to display.
+        sortBy: 'stars', 
+        limit: 6,
         exclude: {
-          forks: false, // Forked projects will not be displayed if set to true.
+          forks: true, 
           projects: [], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
         },
       },
       manual: {
-        // Properties for manually specifying projects
-        projects: ['arifszn/gitprofile', 'arifszn/pandora'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: ['hrmeetsingh/playwright-layout-testing', 'hrmeetsingh/turborepo-ui-tests','hrmeetsingh/ChromeRemoteDebugREPL','hrmeetsingh/cypress-github-custom-actions','hrmeetsingh/EthereumPrivateChain','hrmeetsingh/OpenCV_Python'],
       },
     },
     external: {
       header: 'My Projects',
-      // To hide the `External Projects` section, keep it empty.
       projects: [
-        {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-          imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
-        },
-        {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-          imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
-        },
+        // {
+        //   title: 'Project Name',
+        //   description:
+        //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+        //   imageUrl:
+        //     'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+        //   link: 'https://example.com',
+        // },
+        // {
+        //   title: 'Project Name',
+        //   description:
+        //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+        //   imageUrl:
+        //     'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+        //   link: 'https://example.com',
+        // },
       ],
     },
   },
   seo: {
-    title: 'Portfolio of Ariful Alam',
-    description: '',
-    imageURL: '',
+    title: 'Portfolio of Harmeet Singh',
+    description: 'Portfolio of Harmeet Singh Salech',
+    imageURL: 'https://avatars.githubusercontent.com/u/15318255?s…00&u=e5c4402f9822cd6e44cdc261ab05f06d9d1697c3&v=4',
   },
   social: {
-    linkedin: 'ariful-alam',
-    twitter: 'arif_szn',
-    mastodon: 'arifszn@mastodon.social',
+    linkedin: 'hrmeetsingh',
+    twitter: 'ErHarmeet',
+    mastodon: 'HarmeetSalech@mastodon.social',
     researchGate: '',
     facebook: '',
     instagram: '',
     reddit: '',
     threads: '',
-    youtube: '', // example: 'pewdiepie'
+    youtube: '',
     udemy: '',
     dribbble: '',
     behance: '',
-    medium: 'arifszn',
-    dev: 'arifszn',
+    medium: '',
+    dev: '',
     stackoverflow: '', // example: '1/jeff-atwood'
     skype: '',
     telegram: '',
-    website: 'https://www.arifszn.com',
+    website: '',
     phone: '',
-    email: 'arifulalamszn@gmail.com',
+    email: 'harmeetsalech@gmail.com',
   },
   resume: {
     fileUrl:
@@ -138,22 +136,40 @@ const CONFIG = {
   ],
   publications: [
     {
-      title: 'Publication Title',
-      conferenceName: '',
-      journalName: 'Journal Name',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
+      title: 'Infrastructure as Code',
+      conferenceName: 'GeekNight by ThoughtWorks NCR',
+      journalName: '',
+      authors: 'Harmeet Singh, Surjit Singh',
+      link: 'https://www.slideshare.net/HarmeetSingh131/infrastrucutre-as-code-88707639',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'Applying principles and practices towards IaC automation and perform automated testing for the same. Presented at ThoughtWorks Gurgaon GeekNight Feb 2018',
     },
     {
-      title: 'Publication Title',
-      conferenceName: 'Conference Name',
+      title: 'Web Security 101 - Workshop',
+      conferenceName: 'XConf 2018',
       journalName: '',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
+      authors: 'Harmeet Singh',
+      link: 'https://hrmeetsingh.github.io/WebSec-101/',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'Hands on workshop on basics of web security from NCR XConf 2018, New Delhi. Covers topic ranging from Application Security, Networking Basics, Cryptography, Proxies to common attack vectors',
+    },
+    {
+      title: 'Web Automation using Taiko',
+      conferenceName: 'VodQA NCR 2019',
+      journalName: '',
+      authors: 'Harmeet Singh, Divya Rakhiani',
+      link: 'https://www.youtube.com/watch?v=VzdvHN2UTNg',
+      description:
+        'VodQA 2019 Gurgaon talk on Taiko - ChromeDevTools protocol based web automation tool by ThoughtWorks',
+    },
+    {
+      title: 'Handling PDF Review Comments in FrameMaker',
+      conferenceName: '',
+      journalName: 'Adobe Blogs',
+      authors: 'Harmeet Singh',
+      link: 'https://blog.adobe.com/en/publish/2011/05/02/handling-pdf-review-comments-in-framemaker',
+      description:
+        'Adobe engineering blog demonstrating a powerful feature of Adobe FrameMaker - importing PDF comments from reviewed PDFs to iteratively incorporate feedback into the technical authoring process',
     },
   ],
   // Display articles from your medium or dev account. (Optional)
