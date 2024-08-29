@@ -6,6 +6,7 @@ import { formatDistance } from 'date-fns';
 import { SanitizedBlog } from '../../interfaces/sanitized-config';
 import { ga, skeleton } from '../../utils';
 import { Article } from '../../interfaces/article';
+import { wpBlogs } from './fallback-list';
 
 const BlogCard = ({
   loading,
@@ -31,6 +32,8 @@ const BlogCard = ({
       }).then((res) => {
         setArticles(res);
       });
+    } else {
+      setArticles(wpBlogs);
     }
   }, [blog.source, blog.username]);
 
@@ -188,7 +191,7 @@ const BlogCard = ({
                     skeleton({ widthCls: 'w-28', heightCls: 'h-8' })
                   ) : (
                     <span className="text-base-content opacity-70">
-                      My Publications
+                      Publications
                     </span>
                   )}
                 </h5>

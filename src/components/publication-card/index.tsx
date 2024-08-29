@@ -130,7 +130,7 @@ const PublicationCard = ({
                       skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
                     ) : (
                       <span className="text-base-content opacity-70">
-                        Publications
+                        Presentations & Sessions
                       </span>
                     )}
                   </h5>

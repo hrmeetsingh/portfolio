@@ -81,57 +81,73 @@ const CONFIG = {
       'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
-    'PHP',
-    'Laravel',
+    'PlayWright',
+    'Cypress',
     'JavaScript',
-    'React.js',
+    'Java',
     'Node.js',
-    'Nest.js',
-    'MySQL',
-    'PostgreSQL',
+    'SQL',
+    'TypeScript',
     'Git',
     'Docker',
-    'PHPUnit',
-    'CSS',
-    'Antd',
-    'Tailwind',
+    'Python',
+    'CI/CD',
+    'Test Strategy',
+    'Test Planning',
+    'C',
+    'Analytics',
   ],
   experiences: [
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'September 2021',
+      company: 'Neo Financial, Calgary',
+      position: 'Senior Analyst',
+      from: 'Oct 2023',
       to: 'Present',
-      companyLink: 'https://example.com',
+      companyLink: 'https://www.neofinancial.com',
     },
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'July 2019',
-      to: 'August 2021',
-      companyLink: 'https://example.com',
+      company: 'ThoughtWorks, India',
+      position: 'Lead Consultant',
+      from: 'Dec 2015',
+      to: 'Aug 2023',
+      companyLink: 'https://www.thoughtworks.com',
+    },
+    {
+      company: 'Pitney Bowes, India',
+      position: 'Advisory QA Engineer',
+      from: 'Jan 2012',
+      to: 'Dec 2015',
+      companyLink: 'https://www.pitneybowes.com',
+    },
+    {
+      company: 'Adobe Inc, India',
+      position: 'Senior Software Engineer',
+      from: 'Aug 2010',
+      to: 'Jan 2012',
+      companyLink: 'https://www.adobe.com',
+    },
+    {
+      company: 'TechMahindra Ltd, India',
+      position: 'Software Engineer',
+      from: 'Jun 2007',
+      to: 'May 2010',
+      companyLink: 'https://www.techmahindra.com',
     },
   ],
   certifications: [
     {
-      name: 'Lorem ipsum',
-      body: 'Lorem ipsum dolor sit amet',
-      year: 'March 2022',
-      link: 'https://example.com',
+      name: 'Project Management Professional',
+      body: 'Project Management Institute',
+      year: 'Nov 2014',
+      link: 'https://www.pmi.org/',
     },
   ],
   educations: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2015',
-      to: '2019',
-    },
-    {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      institution: 'Punjab Technical University, Jalandhar, India',
+      degree: 'Bachelor of Technology',
+      from: '2003',
+      to: '2007',
     },
   ],
   publications: [
@@ -174,9 +190,9 @@ const CONFIG = {
   ],
   // Display articles from your medium or dev account. (Optional)
   blog: {
-    source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
-    limit: 2, // How many articles to display. Max is 10.
+    source: 'WP', 
+    username: 'hrmeetsingh', 
+    limit: 3, 
   },
   googleAnalytics: {
     id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
@@ -248,13 +264,6 @@ const CONFIG = {
       '--rounded-btn': '3rem',
     },
   },
-
-  // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
-      class="text-primary" href="https://github.com/arifszn/gitprofile"
-      target="_blank"
-      rel="noreferrer"
-    >GitProfile</a> and ❤️`,
 
   enablePWA: true,
 };
