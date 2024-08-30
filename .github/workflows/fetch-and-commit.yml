@@ -19,6 +19,10 @@ jobs:
         LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
       run: curl -L -o Harmeet_Singh_Salech.pdf $FILE_URL
 
+    - name: List files
+      run: |
+        ls -lrt
+
     - name: Commit and push changes
       env:
         LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
@@ -26,7 +30,7 @@ jobs:
         if ! git diff --quiet; then
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
+          git add Harmeet_Singh_Salech.pdf
           git commit -m "Update file from URL"
           git push origin static-data
           echo "Updated the file"
