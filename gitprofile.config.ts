@@ -83,18 +83,32 @@ const CONFIG = {
   skills: [
     'PlayWright',
     'Cypress',
+    'Selenium',
+    'Appium',
+    'WDIO',
     'JavaScript',
     'Java',
     'Node.js',
+    'Scala',
     'SQL',
+    'MongoDB',
+    'Apache Spark',
+    'Apache Kafka',
+    'JMeter',
+    'K6',
+    'Gatling',
     'TypeScript',
     'Git',
+    'Jira',
     'Docker',
     'Python',
     'CI/CD',
     'Test Strategy',
     'Test Planning',
     'C',
+    'C++',
+    'Microsoft Azure',
+    'AWS',
     'Analytics',
   ],
   experiences: [
@@ -208,7 +222,7 @@ const CONFIG = {
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
-    disableSwitch: false,
+    disableSwitch: true,
 
     // Should use the prefers-color-scheme media-query,
     // using user system preferences, instead of the hardcoded defaultTheme
