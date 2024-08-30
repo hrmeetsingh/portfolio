@@ -16,7 +16,7 @@ jobs:
     - name: Fetch file from URL
       env:
         FILE_URL: ${{ secrets.FILE_URL }}
-      run: curl -o resume.pdf $FILE_URL
+      run: curl -o -L Harmeet_Singh_Salech.pdf $FILE_URL
 
     - name: Commit and push changes
       run: |
