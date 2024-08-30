@@ -19,6 +19,10 @@ jobs:
         LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
       run: curl -L -o $LOCAL_FILE_NAME $FILE_URL
 
+    - name: List files
+      run: |
+        ls -lrt
+
     - name: Commit and push changes
       env:
         LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
