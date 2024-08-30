@@ -16,12 +16,15 @@ jobs:
     - name: Fetch file from URL
       env:
         FILE_URL: ${{ secrets.FILE_URL }}
-      run: curl -o -L Harmeet_Singh_Salech.pdf $FILE_URL
+        LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
+      run: curl -o -L $LOCAL_FILE_NAME $FILE_URL
 
     - name: Commit and push changes
+      env:
+        LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add resume.pdf
+        git add .
         git commit -m "Update file from URL"
         git push origin static-data
