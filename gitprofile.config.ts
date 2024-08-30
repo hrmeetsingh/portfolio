@@ -146,6 +146,7 @@ const CONFIG = {
     {
       institution: 'Punjab Technical University, Jalandhar, India',
       degree: 'Bachelor of Technology',
+      specialization: 'Electronics & Communication Engineering',
       from: '2003',
       to: '2007',
     },
