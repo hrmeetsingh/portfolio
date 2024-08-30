@@ -1,0 +1,27 @@
+name: Fetch and Commit File
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch_and_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Fetch file from URL
+      env:
+        FILE_URL: ${{ secrets.FILE_URL }}
+      run: curl -o resume.pdf $FILE_URL
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add resume.pdf
+        git commit -m "Update file from URL"
+        git push origin static-data
