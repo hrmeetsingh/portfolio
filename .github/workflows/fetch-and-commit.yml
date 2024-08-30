@@ -17,7 +17,7 @@ jobs:
       env:
         FILE_URL: ${{ secrets.FILE_URL }}
         LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
-      run: curl -o -L $LOCAL_FILE_NAME $FILE_URL
+      run: curl -L -o $LOCAL_FILE_NAME $FILE_URL
 
     - name: Commit and push changes
       env:
