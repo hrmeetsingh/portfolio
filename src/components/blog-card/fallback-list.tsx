@@ -16,6 +16,14 @@ export const wpBlogs = [
         categories: ['Linux','Kernel','Module','LoadableKernelModule']
       },
       {
+        title: 'Python-OpenCV for detecting colored object',
+        thumbnail: 'https://hrmeetsingh.wordpress.com/wp-content/uploads/2015/08/opencvdialogs.jpg',
+        link: 'https://hrmeetsingh.wordpress.com/2015/08/19/python-opencv-for-detecting-colored-object/',
+        publishedAt: new Date('08/15/2015'),
+        description: 'Machines too got sensory organs. The one that really fascinates me is “Vision”. OpenCV, or Open Computer Vision is such a program library that provides computers the ability to see through a camera and analyse the images.',
+        categories: ['ComputerVision','Python','OpenCV','ObjectTracking']
+      },
+      {
         title: 'Monitoring WebDriver Actions – Using WebDriverEventListener and EventFiringWebDriver',
         thumbnail: 'https://hrmeetsingh.wordpress.com/wp-content/uploads/2015/09/frameworkarchitecture_watermarked.png',
         link: 'https://hrmeetsingh.wordpress.com/2015/09/17/monitoring-webdriver-actions-using-webdrivereventlistener-and-eventfiringwebdriver/',

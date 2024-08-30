@@ -135,14 +135,9 @@ const BlogCard = ({
               <div className="w-full">
                 <div className="flex items-start px-4">
                   <div className="text-center md:text-left w-full">
-                    <h2 className="font-medium text-base-content opacity-60">
+                    <h2 className="font-medium text-base-content opacity-100">
                       {article.title}
                     </h2>
-                    <p className="text-base-content opacity-50 text-xs">
-                      {formatDistance(article.publishedAt, new Date(), {
-                        addSuffix: true,
-                      })}
-                    </p>
                     <p className="mt-3 text-base-content text-opacity-60 text-sm">
                       {article.description}
                     </p>
