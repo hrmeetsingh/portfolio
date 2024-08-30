@@ -17,11 +17,7 @@ jobs:
       env:
         FILE_URL: ${{ secrets.FILE_URL }}
         LOCAL_FILE_NAME: ${{ secrets.LOCAL_FILE_NAME }}
-      run: curl -L -o $LOCAL_FILE_NAME $FILE_URL
-
-    - name: List files
-      run: |
-        ls -lrt
+      run: curl -L -o Harmeet_Singh_Salech.pdf $FILE_URL
 
     - name: Commit and push changes
       env:
