@@ -50,8 +50,8 @@ const CONFIG = {
     },
   },
   seo: {
-    title: 'Portfolio of Harmeet Singh',
-    description: 'Portfolio of Harmeet Singh Salech',
+    title: 'Harmeet Singh',
+    description: 'Harmeet Singh Salech | SDET | Quality Assurance | Experienced Quality Assurance Professional | Quality Consulting | Software Automation | Deployments | DevOps',
     imageURL: 'https://avatars.githubusercontent.com/u/15318255?s…00&u=e5c4402f9822cd6e44cdc261ab05f06d9d1697c3&v=4',
   },
   social: {

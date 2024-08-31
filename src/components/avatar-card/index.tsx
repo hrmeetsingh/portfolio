@@ -28,7 +28,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
     <div className="card shadow-lg compact bg-base-100">
       <div className="grid place-items-center py-8">
         {loading || !profile ? (
-          <div className="avatar opacity-90">
+          <div className="avatar opacity-90" itemScope itemType="https://schema.org/Person">
             <div className="mb-8 rounded-full w-32 h-32">
               {skeleton({
                 widthCls: 'w-full',
@@ -55,17 +55,18 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
                     heightCls: 'h-full',
                     shape: '',
                   })}
+                  itemprop="image"
                 />
               }
             </div>
           </div>
         )}
-        <div className="text-center mx-auto px-8">
+        <div className="text-center mx-auto px-8" itemScope itemType="https://schema.org/Person">
           <h5 className="font-bold text-2xl">
             {loading || !profile ? (
               skeleton({ widthCls: 'w-48', heightCls: 'h-8' })
             ) : (
-              <span className="text-base-content opacity-70">
+              <span className="text-base-content opacity-70" itemProp="name">
                 {profile.name}
               </span>
             )}
