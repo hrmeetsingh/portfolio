@@ -11,7 +11,11 @@ jobs:
 
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+
+    - name: List files before download
+      run: |
+        ls -lrt
 
     - name: Fetch file from URL
       env:
