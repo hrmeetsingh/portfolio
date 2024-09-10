@@ -119,7 +119,7 @@ const BlogCard = ({
           <div className="p-8 h-full w-full">
             <div className="flex items-center flex-col md:flex-row">
               <div className="avatar mb-5 md:mb-0 opacity-90">
-                <div className="w-24 h-24 mask mask-square">
+                <div className="w-24 h-24 mask mask-square border-l border-r border-t border-b">
                   <LazyImage
                     src={article.thumbnail}
                     alt={'thumbnail'}
@@ -184,7 +184,7 @@ const BlogCard = ({
                   {loading ? (
                     skeleton({ widthCls: 'w-28', heightCls: 'h-8' })
                   ) : (
-                    <span className="text-base-content opacity-70">
+                    <span className="text-base-content opacity-100">
                       Publications
                     </span>
                   )}

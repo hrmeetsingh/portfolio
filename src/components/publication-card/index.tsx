@@ -129,7 +129,7 @@ const PublicationCard = ({
                     {loading ? (
                       skeleton({ widthCls: 'w-40', heightCls: 'h-8' })
                     ) : (
-                      <span className="text-base-content opacity-70">
+                      <span className="text-base-content opacity-100">
                         Presentations & Sessions
                       </span>
                     )}
