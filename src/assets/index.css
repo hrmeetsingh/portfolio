@@ -13,6 +13,7 @@
 }
 
 @media screen and (min-width: 966px) {
+
   ::-webkit-scrollbar,
   .scroller {
     width: 8px;
@@ -28,11 +29,21 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+  font-family: 'Nova Round', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+
+div.rounded-full {
+  font-family: 'Roboto Mono', Monospace;
 }
 
 code {
@@ -77,6 +88,7 @@ svg {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -86,6 +98,7 @@ svg {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

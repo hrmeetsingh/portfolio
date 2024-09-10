@@ -55,7 +55,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
                     heightCls: 'h-full',
                     shape: '',
                   })}
-                  itemprop="image"
+                  itemProp="image"
                 />
               }
             </div>
