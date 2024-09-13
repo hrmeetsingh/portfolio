@@ -6,11 +6,13 @@ const ListItem = ({
   year,
   name,
   body,
+  number,
   link,
 }: {
   year?: React.ReactNode;
   name?: React.ReactNode;
   body?: React.ReactNode;
+  number?: React.ReactNode;
   link?: string;
 }) => (
   <li className="mb-5 ml-4">
@@ -24,6 +26,7 @@ const ListItem = ({
         {name}
       </a>
     </div>
+    <div className="my-0.5 text-xs">Credential ID: {number}</div>
     <h3 className="mb-4 font-normal">{body}</h3>
   </li>
 );
@@ -67,7 +70,7 @@ const CertificationCard = ({
               skeleton({ widthCls: 'w-32', heightCls: 'h-8' })
             ) : (
               <span className="text-base-content opacity-100">
-                Certification
+                Certifications
               </span>
             )}
           </h5>
@@ -84,6 +87,7 @@ const CertificationCard = ({
                     year={certification.year}
                     name={certification.name}
                     body={certification.body}
+                    number={certification.number}
                     link={certification.link}
                   />
                 ))}

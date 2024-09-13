@@ -153,7 +153,15 @@ const CONFIG = {
       name: 'Project Management Professional',
       body: 'Project Management Institute',
       year: 'Nov 2014',
+      number: '1766389',
       link: 'https://www.pmi.org/',
+    },
+    {
+      name: 'Certified Scrum Master',
+      body: 'Scrum Alliance',
+      year: 'May 2014',
+      number: '000325939',
+      link: 'https://www.scrumalliance.org/',
     },
   ],
   educations: [
@@ -218,7 +226,7 @@ const CONFIG = {
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'lofi',
+    defaultTheme: 'black',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode

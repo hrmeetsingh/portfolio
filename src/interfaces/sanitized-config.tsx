@@ -81,6 +81,7 @@ export interface SanitizedCertification {
   body?: string;
   name?: string;
   year?: string;
+  number?: string;
   link?: string;
 }
 
