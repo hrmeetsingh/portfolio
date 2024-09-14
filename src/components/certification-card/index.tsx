@@ -17,7 +17,7 @@ const ListItem = ({
 }) => (
   <li className="mb-5 ml-4">
     <div
-      className="absolute w-2 h-2 bg-base-300 rounded-full border border-base-1000 mt-1.5"
+      className="absolute w-2 h-2 bg-base-300 rounded-full border border-base-300 mt-1.5"
       style={{ left: '-4.5px' }}
     ></div>
     <div className="my-0.5 text-xs">{year}</div>
