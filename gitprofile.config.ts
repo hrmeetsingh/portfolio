@@ -113,10 +113,17 @@ const CONFIG = {
   ],
   experiences: [
     {
+      company: 'Royal Bank of Canada, Calgary',
+      position: 'Senior SDET',
+      from: 'Oct 2024',
+      to: 'Present',
+      companyLink: 'https://www.rbcroyalbank.com/',
+    },
+    {
       company: 'Neo Financial, Calgary',
       position: 'Senior Analyst',
       from: 'Oct 2023',
-      to: 'Present',
+      to: 'Aug 2024',
       companyLink: 'https://www.neofinancial.com',
     },
     {
