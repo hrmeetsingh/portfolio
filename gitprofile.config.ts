@@ -67,7 +67,7 @@ const CONFIG = {
     udemy: '',
     dribbble: '',
     behance: '',
-    medium: '',
+    medium: 'hrmeet',
     dev: '',
     stackoverflow: '', // example: '1/jeff-atwood'
     skype: '',
@@ -220,9 +220,9 @@ const CONFIG = {
   ],
   // Display articles from your medium or dev account. (Optional)
   blog: {
-    source: 'WP', 
-    username: 'hrmeetsingh', 
-    limit: 3, 
+    source: 'medium', 
+    username: 'hrmeet', 
+    limit: 5, 
   },
   googleAnalytics: {
     id: 'G-W5PQFBP1JF', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
