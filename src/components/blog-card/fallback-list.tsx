@@ -1,8 +1,8 @@
 export const wpBlogs = [
   {
     title: 'Model Context Protocol and the use of AI Agents in automation testing',
-    thumbnail: 'https://hrmeetsingh.wordpress.com/wp-content/uploads/2015/09/frameworkarchitecture_watermarked.png',
-    link: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uuiXF4xMkU48AuFfXFX5BA.png',
+    thumbnail: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/1*uuiXF4xMkU48AuFfXFX5BA.png',
+    link: 'https://hrmeet.medium.com/til-model-context-protocol-and-the-use-of-ai-agents-in-automation-testing-45d57325429f',
     publishedAt: new Date('12/29/2024'),
     description: 'Model Context Protocol is a standard protocol to connect an LLM to an execution environment. In this blog, we will look at how to use Model Context Protocol to connect Anthropic Claude to Playwright and how to use AI agents in automation testing.',
     categories: ['AI Agents', 'Claude AI', 'Playwright', 'automation', 'LLM', 'Model Context Protocol', 'Framework']
