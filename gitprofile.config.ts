@@ -24,7 +24,7 @@ const CONFIG = {
         },
       },
       manual: {
-        projects: ['hrmeetsingh/playwright-layout-testing', 'hrmeetsingh/turborepo-ui-tests','hrmeetsingh/ChromeRemoteDebugREPL','hrmeetsingh/cypress-github-custom-actions','hrmeetsingh/EthereumPrivateChain','hrmeetsingh/OpenCV_Python'],
+        projects: ['hrmeetsingh/playwright-layout-testing', 'hrmeetsingh/mcp-browser-automation','hrmeetsingh/ChromeRemoteDebugREPL','hrmeetsingh/SankeyGraphsForEverything','hrmeetsingh/EthereumPrivateChain','hrmeetsingh/OpenCV_Python'],
       },
     },
     external: {
