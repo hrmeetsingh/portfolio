@@ -28,7 +28,7 @@ const SkillCard = ({
             {loading ? (
               skeleton({ widthCls: 'w-32', heightCls: 'h-8' })
             ) : (
-              <span className="text-base-content opacity-100">Tech Stack</span>
+              <span className="text-base-content opacity-100">Skills and Technologies</span>
             )}
           </h5>
         </div>

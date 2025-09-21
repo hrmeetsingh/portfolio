@@ -9,15 +9,15 @@ const CONFIG = {
    * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
    * for example your repository is at https://github.com/arifszn/portfolio, then set base to '/portfolio/'.
    */
-  base: './',
+  base: '/portfolio/',
   projects: {
     github: {
       display: true,
       header: 'Github Projects',
-      mode: 'manual',
+      mode: 'automatic',
       automatic: {
         sortBy: 'stars', 
-        limit: 6,
+        limit: 8,
         exclude: {
           forks: true, 
           projects: [], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
@@ -72,7 +72,7 @@ const CONFIG = {
     stackoverflow: '', // example: '1/jeff-atwood'
     skype: '',
     telegram: '',
-    website: '',
+    website: 'https://www.harmeet.me',
     phone: '',
     email: 'harmeetsalech@gmail.com',
   },
@@ -86,6 +86,14 @@ const CONFIG = {
     'Selenium',
     'Appium',
     'WDIO',
+    'Security Testing',
+    'Threat Modeling',
+    'Arduino',
+    'Raspberry Pi',
+    'Problem Solving',
+    'Debugging',
+    'K8s',
+    'Jenkins',
     'JavaScript',
     'Java',
     'Node.js',
@@ -222,7 +230,7 @@ const CONFIG = {
   blog: {
     source: 'medium', 
     username: 'hrmeet', 
-    limit: 5, 
+    limit: 7, 
   },
   googleAnalytics: {
     id: 'G-W5PQFBP1JF', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX

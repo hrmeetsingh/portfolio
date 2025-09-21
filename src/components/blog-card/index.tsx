@@ -185,7 +185,7 @@ const BlogCard = ({
                     skeleton({ widthCls: 'w-28', heightCls: 'h-8' })
                   ) : (
                     <span className="text-base-content opacity-100">
-                      Publications
+                      Blogs
                     </span>
                   )}
                 </h5>
