@@ -78,7 +78,7 @@ const CONFIG = {
   },
   resume: {
     fileUrl:
-      './public/Harmeet_Singh_Salech.pdf', // Empty fileUrl will hide the `Download Resume` button.
+      '', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
     'PlayWright',
