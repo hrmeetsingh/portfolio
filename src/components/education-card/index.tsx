@@ -1,6 +1,7 @@
 import React from 'react';
 import { SanitizedEducation } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
+import { FaGraduationCap } from 'react-icons/fa';
 
 const ListItem = ({
   time,
@@ -68,7 +69,10 @@ const EducationCard = ({
             {loading ? (
               skeleton({ widthCls: 'w-32', heightCls: 'h-8' })
             ) : (
-              <span className="text-base-content opacity-100">Education</span>
+              <span className="text-base-content opacity-100 flex items-center gap-2">
+                <FaGraduationCap className="text-lg" />
+                Education
+              </span>
             )}
           </h5>
         </div>

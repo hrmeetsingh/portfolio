@@ -1,4 +1,5 @@
 import { skeleton } from '../../utils';
+import { FaCode } from 'react-icons/fa';
 
 const SkillCard = ({
   loading,
@@ -28,7 +29,10 @@ const SkillCard = ({
             {loading ? (
               skeleton({ widthCls: 'w-32', heightCls: 'h-8' })
             ) : (
-              <span className="text-base-content opacity-100">Skills and Technologies</span>
+              <span className="text-base-content opacity-100 flex items-center gap-2">
+                <FaCode className="text-lg" />
+                Skills and Technologies
+              </span>
             )}
           </h5>
         </div>

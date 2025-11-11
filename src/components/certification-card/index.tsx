@@ -1,6 +1,7 @@
 import React from 'react';
 import { SanitizedCertification } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
+import { FaCertificate } from 'react-icons/fa';
 
 const ListItem = ({
   year,
@@ -69,7 +70,8 @@ const CertificationCard = ({
             {loading ? (
               skeleton({ widthCls: 'w-32', heightCls: 'h-8' })
             ) : (
-              <span className="text-base-content opacity-100">
+              <span className="text-base-content opacity-100 flex items-center gap-2">
+                <FaCertificate className="text-lg" />
                 Certifications
               </span>
             )}
