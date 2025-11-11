@@ -118,6 +118,13 @@ export interface SanitizedBlog {
   limit: number;
 }
 
+export interface SanitizedBooks {
+  display: boolean;
+  userId: string;
+  limit: number;
+  header: string;
+}
+
 export interface SanitizedCustomTheme {
   primary: string;
   secondary: string;
@@ -151,6 +158,7 @@ export interface SanitizedConfig {
   googleAnalytics: SanitizedGoogleAnalytics;
   hotjar: SanitizedHotjar;
   blog: SanitizedBlog;
+  books: SanitizedBooks;
   themeConfig: SanitizedThemeConfig;
   footer?: string;
   enablePWA: boolean;

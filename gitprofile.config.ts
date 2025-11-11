@@ -16,15 +16,15 @@ const CONFIG = {
       header: 'Github Projects',
       mode: 'automatic',
       automatic: {
-        sortBy: 'stars', 
+        sortBy: 'stars',
         limit: 8,
         exclude: {
-          forks: true, 
+          forks: true,
           projects: [], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
         },
       },
       manual: {
-        projects: ['hrmeetsingh/playwright-layout-testing', 'hrmeetsingh/mcp-browser-automation','hrmeetsingh/ChromeRemoteDebugREPL','hrmeetsingh/SankeyGraphsForEverything','hrmeetsingh/EthereumPrivateChain','hrmeetsingh/OpenCV_Python'],
+        projects: ['hrmeetsingh/playwright-layout-testing', 'hrmeetsingh/mcp-browser-automation', 'hrmeetsingh/ChromeRemoteDebugREPL', 'hrmeetsingh/SankeyGraphsForEverything', 'hrmeetsingh/EthereumPrivateChain', 'hrmeetsingh/OpenCV_Python'],
       },
     },
     external: {
@@ -228,12 +228,17 @@ const CONFIG = {
   ],
   // Display articles from your medium or dev account. (Optional)
   blog: {
-    source: 'medium', 
-    username: 'hrmeet', 
-    limit: 7, 
+    source: 'medium',
+    username: 'hrmeet',
+    limit: 7,
   },
   googleAnalytics: {
     id: 'G-W5PQFBP1JF', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
+  },
+  books: {
+    userId: '12291100',
+    limit: 5,
+    header: 'My Reading List',
   },
   // Track visitor interaction and behavior. https://www.hotjar.com
   hotjar: {

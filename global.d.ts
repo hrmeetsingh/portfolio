@@ -284,6 +284,23 @@ interface Blog {
   limit?: number;
 }
 
+interface Books {
+  /**
+   * Goodreads user ID
+   */
+  userId?: string;
+
+  /**
+   * How many books to display
+   */
+  limit?: number;
+
+  /**
+   * Section header
+   */
+  header?: string;
+}
+
 interface CustomTheme {
   /**
    * Primary color
@@ -423,6 +440,11 @@ interface Config {
    * Blog config
    */
   blog?: Blog;
+
+  /**
+   * Books config
+   */
+  books?: Books;
 
   /**
    * Theme config
