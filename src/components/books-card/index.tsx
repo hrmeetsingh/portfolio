@@ -31,7 +31,6 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
       setBooksLoading(true);
       setError(null);
 
-      const corsProxy = 'https://api.allorigins.win/get?url=';
       const allBooks: Book[] = [];
 
       const parseRSSFeed = (xmlString: string, status: 'reading' | 'read'): Book[] => {
@@ -72,13 +71,13 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
       const readUrl = `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`;
 
       const [currentlyReadingResult, readResult] = await Promise.allSettled([
-        axios.get(`${corsProxy}${encodeURIComponent(currentlyReadingUrl)}`),
-        axios.get(`${corsProxy}${encodeURIComponent(readUrl)}`),
+        axios.get(`https://corsproxy.io/?${encodeURIComponent(currentlyReadingUrl)}`),
+        axios.get(`https://corsproxy.io/?${encodeURIComponent(readUrl)}`),
       ]);
 
       if (currentlyReadingResult.status === 'fulfilled') {
         try {
-          const currentlyReadingBooks = parseRSSFeed(currentlyReadingResult.value.data.contents, 'reading');
+          const currentlyReadingBooks = parseRSSFeed(currentlyReadingResult.value.data, 'reading');
           allBooks.push(...currentlyReadingBooks);
         } catch (err) {
           console.warn('Failed to parse currently-reading books:', err);
@@ -87,7 +86,7 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
 
       if (readResult.status === 'fulfilled') {
         try {
-          const readBooks = parseRSSFeed(readResult.value.data.contents, 'read');
+          const readBooks = parseRSSFeed(readResult.value.data, 'read');
           allBooks.push(...readBooks);
         } catch (err) {
           console.warn('Failed to parse read books:', err);
