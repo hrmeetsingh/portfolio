@@ -68,22 +68,30 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
         return parsedBooks;
       };
 
-      try {
-        const currentlyReadingUrl = `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`;
-        const currentlyReadingResponse = await axios.get(`${corsProxy}${encodeURIComponent(currentlyReadingUrl)}`);
-        const currentlyReadingBooks = parseRSSFeed(currentlyReadingResponse.data.contents, 'reading');
-        allBooks.push(...currentlyReadingBooks);
-      } catch (err) {
-        console.warn('Failed to fetch currently-reading books:', err);
+      const currentlyReadingUrl = `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`;
+      const readUrl = `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`;
+
+      const [currentlyReadingResult, readResult] = await Promise.allSettled([
+        axios.get(`${corsProxy}${encodeURIComponent(currentlyReadingUrl)}`),
+        axios.get(`${corsProxy}${encodeURIComponent(readUrl)}`),
+      ]);
+
+      if (currentlyReadingResult.status === 'fulfilled') {
+        try {
+          const currentlyReadingBooks = parseRSSFeed(currentlyReadingResult.value.data.contents, 'reading');
+          allBooks.push(...currentlyReadingBooks);
+        } catch (err) {
+          console.warn('Failed to parse currently-reading books:', err);
+        }
       }
 
-      try {
-        const readUrl = `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`;
-        const readResponse = await axios.get(`${corsProxy}${encodeURIComponent(readUrl)}`);
-        const readBooks = parseRSSFeed(readResponse.data.contents, 'read');
-        allBooks.push(...readBooks);
-      } catch (err) {
-        console.warn('Failed to fetch read books:', err);
+      if (readResult.status === 'fulfilled') {
+        try {
+          const readBooks = parseRSSFeed(readResult.value.data.contents, 'read');
+          allBooks.push(...readBooks);
+        } catch (err) {
+          console.warn('Failed to parse read books:', err);
+        }
       }
 
       allBooks.sort((a, b) => {
