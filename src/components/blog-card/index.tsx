@@ -116,7 +116,7 @@ const BlogCard = ({
             window?.open(article.link, '_blank');
           }}
         >
-          <div className="p-8 h-full w-full">
+          <div className="p-4 h-full w-full">
             <div className="flex items-center flex-col md:flex-row">
               <div className="avatar mb-5 md:mb-0 opacity-90">
                 <div className="w-24 h-24 mask mask-square border-l border-r border-t border-b">
@@ -143,7 +143,7 @@ const BlogCard = ({
                     <div className="mt-4 flex items-center flex-wrap justify-center md:justify-start">
                       {article.categories.map((category, index2) => (
                         <div
-                          className="py-2 px-4 text-xs leading-3 rounded-full bg-base-300 mr-1 mb-1 opacity-50 text-base-content"
+                          className="py-2 px-2 text-xs leading-3 rounded-full bg-base-300 mr-1 mb-1 opacity-50 text-base-content"
                           key={index2}
                         >
                           #{category}
@@ -191,7 +191,7 @@ const BlogCard = ({
                 </h5>
               </div>
               <div className="col-span-2">
-                <div className="grid grid-cols-1 gap-6">
+                <div className="grid grid-cols-1 gap-4">
                   {loading || !articles ? renderSkeleton() : renderArticles()}
                 </div>
               </div>

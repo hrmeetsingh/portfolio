@@ -103,7 +103,7 @@ const GithubProjectCard = ({
                 <span>{item.name}</span>
               </div>
             </div>
-            <p className="mb-5 mt-1 text-base-content text-opacity-60 text-sm">
+            <p className="mb-2 mt-1 text-base-content text-opacity-60 text-sm">
               {item.description}
             </p>
           </div>
@@ -164,7 +164,7 @@ const GithubProjectCard = ({
                   )}
                 </div>
                 <div className="col-span-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {loading ? renderSkeleton() : renderProjects()}
                   </div>
                 </div>
