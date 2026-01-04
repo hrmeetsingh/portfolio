@@ -67,12 +67,19 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
         return parsedBooks;
       };
 
-      const currentlyReadingUrl = `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`;
-      const readUrl = `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`;
+      const proxyUrl = 'https://api.allorigins.win/get?url=';
+      const currentlyReadingUrl = encodeURIComponent(`https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`);
+      const readUrl = encodeURIComponent(`https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`);
 
       const [currentlyReadingResult, readResult] = await Promise.allSettled([
-        axios.get(`https://corsproxy.io/?${encodeURIComponent(currentlyReadingUrl)}`),
-        axios.get(`https://corsproxy.io/?${encodeURIComponent(readUrl)}`),
+        axios.get(`${proxyUrl}${currentlyReadingUrl}`).then(res => ({
+          ...res,
+          data: res.data.contents
+        })),
+        axios.get(`${proxyUrl}${readUrl}`).then(res => ({
+          ...res,
+          data: res.data.contents
+        })),
       ]);
 
       if (currentlyReadingResult.status === 'fulfilled') {
