@@ -33,28 +33,34 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
 
       const allBooks: Book[] = [];
 
-      const parseRSSFeed = (xmlString: string, status: 'reading' | 'read'): Book[] => {
+      const parseRSSFeed = (
+        xmlString: string,
+        status: 'reading' | 'read',
+      ): Book[] => {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-        
+
         const parserError = xmlDoc.querySelector('parsererror');
         if (parserError) {
           throw new Error('Failed to parse RSS feed');
         }
-        
+
         const items = xmlDoc.querySelectorAll('item');
         const parsedBooks: Book[] = [];
-        
+
         items.forEach((item) => {
-          const title = item.querySelector('title')?.textContent || 'Unknown Title';
-          const author = item.querySelector('author_name')?.textContent || 'Unknown Author';
+          const title =
+            item.querySelector('title')?.textContent || 'Unknown Title';
+          const author =
+            item.querySelector('author_name')?.textContent || 'Unknown Author';
           const bookLink = item.querySelector('link')?.textContent || '';
           const bookId = item.querySelector('book_id')?.textContent || '';
-          
-          const description = item.querySelector('description')?.textContent || '';
+
+          const description =
+            item.querySelector('description')?.textContent || '';
           const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
           const coverUrl = imgMatch ? imgMatch[1] : '';
-          
+
           parsedBooks.push({
             title,
             author,
@@ -63,28 +69,35 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
             status,
           });
         });
-        
+
         return parsedBooks;
       };
 
-      const proxyUrl = 'https://api.allorigins.win/get?url=';
-      const currentlyReadingUrl = encodeURIComponent(`https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`);
-      const readUrl = encodeURIComponent(`https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`);
+      const proxyUrl = 'https://corsproxy.io?url=';
+      const currentlyReadingUrl = encodeURIComponent(
+        `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`,
+      );
+      const readUrl = encodeURIComponent(
+        `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`,
+      );
 
       const [currentlyReadingResult, readResult] = await Promise.allSettled([
-        axios.get(`${proxyUrl}${currentlyReadingUrl}`).then(res => ({
+        axios.get(`${proxyUrl}${currentlyReadingUrl}`).then((res) => ({
           ...res,
-          data: res.data.contents
+          data: res.data.contents,
         })),
-        axios.get(`${proxyUrl}${readUrl}`).then(res => ({
+        axios.get(`${proxyUrl}${readUrl}`).then((res) => ({
           ...res,
-          data: res.data.contents
+          data: res.data.contents,
         })),
       ]);
 
       if (currentlyReadingResult.status === 'fulfilled') {
         try {
-          const currentlyReadingBooks = parseRSSFeed(currentlyReadingResult.value.data, 'reading');
+          const currentlyReadingBooks = parseRSSFeed(
+            currentlyReadingResult.value.data,
+            'reading',
+          );
           allBooks.push(...currentlyReadingBooks);
         } catch (err) {
           console.warn('Failed to parse currently-reading books:', err);
@@ -105,9 +118,9 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
         if (a.status === 'read' && b.status === 'reading') return 1;
         return 0;
       });
-      
+
       setBooksList(allBooks);
-      
+
       if (allBooks.length === 0) {
         setError('No books found in your Goodreads shelves');
       }
@@ -131,10 +144,18 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
       array.push(
         <div key={index} className="flex gap-4 py-3">
           <div className="flex-shrink-0">
-            {skeleton({ widthCls: 'w-16', heightCls: 'h-24', shape: 'rounded' })}
+            {skeleton({
+              widthCls: 'w-16',
+              heightCls: 'h-24',
+              shape: 'rounded',
+            })}
           </div>
           <div className="flex-grow">
-            {skeleton({ widthCls: 'w-3/4', heightCls: 'h-4', className: 'mb-2' })}
+            {skeleton({
+              widthCls: 'w-3/4',
+              heightCls: 'h-4',
+              className: 'mb-2',
+            })}
             {skeleton({ widthCls: 'w-1/2', heightCls: 'h-3' })}
           </div>
         </div>,
