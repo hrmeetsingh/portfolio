@@ -73,31 +73,23 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
         return parsedBooks;
       };
 
-      const proxyUrl = 'https://corsproxy.io?url=';
-      const currentlyReadingUrl = encodeURIComponent(
-        `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`,
-      );
-      const readUrl = encodeURIComponent(
-        `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`,
-      );
-
       const [currentlyReadingResult, readResult] = await Promise.allSettled([
-        axios.get(`${proxyUrl}${currentlyReadingUrl}`).then((res) => ({
-          ...res,
-          data: res.data.contents,
-        })),
-        axios.get(`${proxyUrl}${readUrl}`).then((res) => ({
-          ...res,
-          data: res.data.contents,
-        })),
+        axios.get('https://api.allorigins.win/get', {
+          params: {
+            url: `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`,
+          },
+        }),
+        axios.get('https://api.allorigins.win/get', {
+          params: {
+            url: `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`,
+          },
+        }),
       ]);
 
       if (currentlyReadingResult.status === 'fulfilled') {
         try {
-          const currentlyReadingBooks = parseRSSFeed(
-            currentlyReadingResult.value.data,
-            'reading',
-          );
+          const xmlString = currentlyReadingResult.value.data.contents;
+          const currentlyReadingBooks = parseRSSFeed(xmlString, 'reading');
           allBooks.push(...currentlyReadingBooks);
         } catch (err) {
           console.warn('Failed to parse currently-reading books:', err);
@@ -106,7 +98,8 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
 
       if (readResult.status === 'fulfilled') {
         try {
-          const readBooks = parseRSSFeed(readResult.value.data, 'read');
+          const xmlString = readResult.value.data.contents;
+          const readBooks = parseRSSFeed(xmlString, 'read');
           allBooks.push(...readBooks);
         } catch (err) {
           console.warn('Failed to parse read books:', err);
