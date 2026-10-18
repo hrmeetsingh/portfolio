@@ -1,0 +1,48 @@
+{
+  "installed_at": "2026-10-18T14:17:48",
+  "on_failure_block": true,
+  "settings": {
+    "keys": [
+      "disableBypassPermissionsMode",
+      "defaultMode"
+    ],
+    "rules": {
+      "ask": [
+        "Bash(*run-with-secrets*)",
+        "Bash(git push *)"
+      ],
+      "deny": [
+        "Read(.env)",
+        "Read(.env.*)",
+        "Read(!.env.example)",
+        "Read(!.env.sample)",
+        "Read(!.env.template)",
+        "Read(.envrc)",
+        "Read(**/*.pem)",
+        "Read(**/*.key)",
+        "Read(**/*.p12)",
+        "Read(**/*.pfx)",
+        "Read(**/id_rsa*)",
+        "Read(**/id_ed25519*)",
+        "Read(**/credentials.json)",
+        "Read(**/*.tfvars)",
+        "Edit(/.claude/settings.json)",
+        "Edit(/.claude/settings.local.json)",
+        "Edit(/.claude/hooks/**)",
+        "Edit(/.agent/secrets.conf)",
+        "Edit(/.agent/secrets.manifest)",
+        "Edit(/.agent/bootstrap-manifest.json)",
+        "Bash(security find-generic-password *)",
+        "Bash(security find-internet-password *)",
+        "Bash(security dump-keychain *)",
+        "Bash(printenv *)",
+        "Bash(env)"
+      ]
+    }
+  },
+  "skill_dir": "/Users/harmeetsingh/.claude/plugins/cache/hrmeets/agent-bootstrap/1.0.0/skills/agent-bootstrap",
+  "updated": "2026-10-18T14:17:48",
+  "user_level": true,
+  "vault_enabled": true,
+  "version": "1.0.0"
+}

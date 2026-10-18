@@ -1,0 +1,97 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -E -s \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent-bootstrap/guard_secrets.py\" --scope project",
+            "timeout": 15,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -E -s \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent-bootstrap/log_change.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -E -s \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent-bootstrap/session_start.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -E -s \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent-bootstrap/stop_handoff.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "ConfigChange": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -E -s \"${CLAUDE_PROJECT_DIR}/.claude/hooks/agent-bootstrap/config_guard.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(!.env.example)",
+      "Read(!.env.sample)",
+      "Read(!.env.template)",
+      "Read(.envrc)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/id_rsa*)",
+      "Read(**/id_ed25519*)",
+      "Read(**/credentials.json)",
+      "Read(**/*.tfvars)",
+      "Edit(/.claude/settings.json)",
+      "Edit(/.claude/settings.local.json)",
+      "Edit(/.claude/hooks/**)",
+      "Edit(/.agent/secrets.conf)",
+      "Edit(/.agent/secrets.manifest)",
+      "Edit(/.agent/bootstrap-manifest.json)",
+      "Bash(security find-generic-password *)",
+      "Bash(security find-internet-password *)",
+      "Bash(security dump-keychain *)",
+      "Bash(printenv *)",
+      "Bash(env)"
+    ],
+    "ask": [
+      "Bash(*run-with-secrets*)",
+      "Bash(git push *)"
+    ],
+    "disableBypassPermissionsMode": "disable",
+    "defaultMode": "plan"
+  }
+}

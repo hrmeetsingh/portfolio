@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# agent-bootstrap
+.agent/state/
+.vault/.obsidian/workspace*.json
+.vault/.obsidian/cache
+.vault/.trash/
+.claude/settings.local.json
+*.pre-agent-bootstrap.bak
+*.tmp-agent-bootstrap

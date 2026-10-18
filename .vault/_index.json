@@ -1,0 +1,145 @@
+{
+  "generated": "2026-10-18",
+  "modules": {
+    ".": {
+      "hash": "f7d213e8b0fc",
+      "purpose_hash": "f7d213e8b0fc",
+      "slug": "root"
+    },
+    ".github": {
+      "hash": "2db213fcdbce",
+      "purpose_hash": "2db213fcdbce",
+      "slug": "github"
+    },
+    ".github/workflows": {
+      "hash": "bd5a29b17603",
+      "purpose_hash": "bd5a29b17603",
+      "slug": "github-workflows"
+    },
+    "pages/api": {
+      "hash": "015fb693affc",
+      "purpose_hash": "015fb693affc",
+      "slug": "pages-api"
+    },
+    "public": {
+      "hash": "7fb9f5d39dec",
+      "purpose_hash": "7fb9f5d39dec",
+      "slug": "public"
+    },
+    "src": {
+      "hash": "51baa1547aa0",
+      "purpose_hash": "51baa1547aa0",
+      "slug": "src"
+    },
+    "src/assets": {
+      "hash": "0c47609f8ed9",
+      "purpose_hash": "0c47609f8ed9",
+      "slug": "src-assets"
+    },
+    "src/components": {
+      "hash": "63925818c91d",
+      "purpose_hash": "63925818c91d",
+      "slug": "src-components"
+    },
+    "src/components/avatar-card": {
+      "hash": "ca7307a879bc",
+      "purpose_hash": "ca7307a879bc",
+      "slug": "src-components-avatar-card"
+    },
+    "src/components/blog-card": {
+      "hash": "a4dd5ea41d4c",
+      "purpose_hash": "a4dd5ea41d4c",
+      "slug": "src-components-blog-card"
+    },
+    "src/components/books-card": {
+      "hash": "ce62de480a01",
+      "purpose_hash": "ce62de480a01",
+      "slug": "src-components-books-card"
+    },
+    "src/components/certification-card": {
+      "hash": "38cb99a011a8",
+      "purpose_hash": "38cb99a011a8",
+      "slug": "src-components-certification-card"
+    },
+    "src/components/details-card": {
+      "hash": "45f393cf207e",
+      "purpose_hash": "45f393cf207e",
+      "slug": "src-components-details-card"
+    },
+    "src/components/education-card": {
+      "hash": "30a71c1efef8",
+      "purpose_hash": "30a71c1efef8",
+      "slug": "src-components-education-card"
+    },
+    "src/components/error-page": {
+      "hash": "90fa9bad8e75",
+      "purpose_hash": "90fa9bad8e75",
+      "slug": "src-components-error-page"
+    },
+    "src/components/experience-card": {
+      "hash": "e96a7017dde9",
+      "purpose_hash": "e96a7017dde9",
+      "slug": "src-components-experience-card"
+    },
+    "src/components/external-project-card": {
+      "hash": "e209462925bb",
+      "purpose_hash": "e209462925bb",
+      "slug": "src-components-external-project-card"
+    },
+    "src/components/footer": {
+      "hash": "263e81aebba6",
+      "purpose_hash": "263e81aebba6",
+      "slug": "src-components-footer"
+    },
+    "src/components/github-project-card": {
+      "hash": "2d1611e1216c",
+      "purpose_hash": "2d1611e1216c",
+      "slug": "src-components-github-project-card"
+    },
+    "src/components/head-tag-editor": {
+      "hash": "543760365f05",
+      "purpose_hash": "543760365f05",
+      "slug": "src-components-head-tag-editor"
+    },
+    "src/components/lazy-image": {
+      "hash": "2400b1aa852a",
+      "purpose_hash": "2400b1aa852a",
+      "slug": "src-components-lazy-image"
+    },
+    "src/components/publication-card": {
+      "hash": "656a2730a7ca",
+      "purpose_hash": "656a2730a7ca",
+      "slug": "src-components-publication-card"
+    },
+    "src/components/skill-card": {
+      "hash": "14b237491cc1",
+      "purpose_hash": "14b237491cc1",
+      "slug": "src-components-skill-card"
+    },
+    "src/components/theme-changer": {
+      "hash": "c78c422cf3f2",
+      "purpose_hash": "c78c422cf3f2",
+      "slug": "src-components-theme-changer"
+    },
+    "src/constants": {
+      "hash": "6e15e4c5bc51",
+      "purpose_hash": "6e15e4c5bc51",
+      "slug": "src-constants"
+    },
+    "src/data": {
+      "hash": "cae16cb7c31d",
+      "purpose_hash": "cae16cb7c31d",
+      "slug": "src-data"
+    },
+    "src/interfaces": {
+      "hash": "badc7ad2d900",
+      "purpose_hash": "badc7ad2d900",
+      "slug": "src-interfaces"
+    },
+    "src/utils": {
+      "hash": "c10b49fff3b8",
+      "purpose_hash": "c10b49fff3b8",
+      "slug": "src-utils"
+    }
+  }
+}
