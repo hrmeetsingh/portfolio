@@ -74,22 +74,22 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
       };
 
       const [currentlyReadingResult, readResult] = await Promise.allSettled([
-        axios.get('https://api.allorigins.win/get', {
-          params: {
-            url: `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=currently-reading`,
-          },
+        axios.get<string>(books.proxyUrl, {
+          params: { shelf: 'currently-reading' },
+          responseType: 'text',
         }),
-        axios.get('https://api.allorigins.win/get', {
-          params: {
-            url: `https://www.goodreads.com/review/list_rss/${books.userId}?shelf=read`,
-          },
+        axios.get<string>(books.proxyUrl, {
+          params: { shelf: 'read' },
+          responseType: 'text',
         }),
       ]);
 
       if (currentlyReadingResult.status === 'fulfilled') {
         try {
-          const xmlString = currentlyReadingResult.value.data.contents;
-          const currentlyReadingBooks = parseRSSFeed(xmlString, 'reading');
+          const currentlyReadingBooks = parseRSSFeed(
+            currentlyReadingResult.value.data,
+            'reading',
+          );
           allBooks.push(...currentlyReadingBooks);
         } catch (err) {
           console.warn('Failed to parse currently-reading books:', err);
@@ -98,8 +98,7 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
 
       if (readResult.status === 'fulfilled') {
         try {
-          const xmlString = readResult.value.data.contents;
-          const readBooks = parseRSSFeed(xmlString, 'read');
+          const readBooks = parseRSSFeed(readResult.value.data, 'read');
           allBooks.push(...readBooks);
         } catch (err) {
           console.warn('Failed to parse read books:', err);
@@ -123,7 +122,7 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
     } finally {
       setBooksLoading(false);
     }
-  }, [books.display, books.userId]);
+  }, [books.display, books.userId, books.proxyUrl]);
 
   useEffect(() => {
     if (books.display) {
@@ -229,7 +228,7 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
             <div className="text-center py-4">
               <p className="text-sm text-error opacity-70">{error}</p>
               <p className="text-xs text-base-content text-opacity-50 mt-2">
-                Configure your Goodreads user ID in the config file
+                Check the Goodreads user ID and proxyUrl in the config file
               </p>
             </div>
           ) : booksList.length === 0 ? (

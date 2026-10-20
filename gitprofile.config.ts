@@ -237,6 +237,9 @@ const CONFIG = {
   },
   books: {
     userId: '12291100',
+    // Google Apps Script web app that proxies the Goodreads RSS (adds CORS headers)
+    proxyUrl:
+      'https://script.google.com/macros/s/AKfycby1zAB-QwC1Hd1HfeXWFS73Zp-sksjTRuheMc9DpIN5Od76Tsz7aBg7QE5D1S_LDEydlA/exec',
     limit: 5,
     header: 'My Reading List',
   },

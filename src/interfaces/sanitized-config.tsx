@@ -121,6 +121,7 @@ export interface SanitizedBlog {
 export interface SanitizedBooks {
   display: boolean;
   userId: string;
+  proxyUrl: string;
   limit: number;
   header: string;
 }
