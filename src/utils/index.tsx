@@ -119,9 +119,10 @@ export const getSanitizedConfig = (
       },
       books: {
         userId: config?.books?.userId || '',
+        proxyUrl: config?.books?.proxyUrl || '',
         limit: config?.books?.limit || 5,
         header: config?.books?.header || 'Books',
-        display: !!config?.books?.userId,
+        display: !!config?.books?.userId && !!config?.books?.proxyUrl,
       },
       themeConfig: {
         defaultTheme: config?.themeConfig?.defaultTheme || DEFAULT_THEMES[0],

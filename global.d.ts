@@ -291,6 +291,11 @@ interface Books {
   userId?: string;
 
   /**
+   * URL of a CORS-enabled proxy that returns the Goodreads RSS for `?shelf=<shelf>`
+   */
+  proxyUrl?: string;
+
+  /**
    * How many books to display
    */
   limit?: number;
