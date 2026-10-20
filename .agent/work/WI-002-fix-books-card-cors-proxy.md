@@ -6,7 +6,7 @@ branch: agent/WI-002-fix-books-card-cors-proxy
 created: 2026-10-19
 updated: 2026-10-19
 owner: agent
-next-step: Run reviewer subagent, check the Books card in a browser (npm run dev), then user commits/pushes
+next-step: User runs npm run dev to eyeball the Books card, then pushes agent/WI-002-fix-books-card-cors-proxy and opens a PR
 ---
 # WI-002: Fix books card CORS proxy
 
@@ -18,7 +18,7 @@ Books card loads Goodreads shelves again. The public CORS proxy (api.allorigins.
 
 - [x] Books card fetches both shelves via `books.proxyUrl` (curl-verified: 200 XML, ACAO *)
 - [x] `npm run build` passes; no new lint errors (1 pre-existing no-unused-vars in src/utils/index.tsx)
-- [ ] Visual check in browser (npm run dev)
+- [ ] Visual check in browser (npm run dev) - pending, user to do
 
 ## Plan
 
@@ -42,10 +42,11 @@ Books card loads Goodreads shelves again. The public CORS proxy (api.allorigins.
 - 2026-10-19 - created
 - 2026-10-19 - diagnosed: allorigins 522, corsproxy.io 401, Cloudflare Worker blocked 403 by Goodreads CloudFront; Apps Script proxy verified with curl
 - 2026-10-19 - implemented proxyUrl in config/types/sanitizer/books-card; build passes; reviewer: approve with nits
+- 2026-10-19 - committed as 038c50b (5 source/config files + this item); not pushed
 - Commit only the 5 source/config files; keep .agent/log, WI-001 and vault/ out of this commit (vault/ vs .vault/ looks like a stray dir, user to check)
 
 ## Blockers / open questions
 
 ## Handoff
 
-Code done. Apps Script ID is hardcoded in the script (12291100); changing account = edit script + Deploy > Manage deployments > New version. Re-test: `curl -sL "<proxyUrl>?shelf=read" | head`. Don't run prettier on gitprofile.config.ts (reformats unrelated lines).
+Code done and committed (038c50b). Uncommitted leftovers not part of this item: .agent/log/*, WI-001 file. Apps Script ID is hardcoded in the script (12291100); changing account = edit script + Deploy > Manage deployments > New version. Re-test: `curl -sL "<proxyUrl>?shelf=read" | head`. Don't run prettier on gitprofile.config.ts (reformats unrelated lines).
