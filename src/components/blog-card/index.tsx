@@ -7,6 +7,44 @@ import { ga, skeleton } from '../../utils';
 import { Article } from '../../interfaces/article';
 import { wpBlogs } from './fallback-list';
 
+const MEDIUM_ATTEMPTS = 3;
+
+// getMediumPost swallows errors (e.g. rss2json 500s) and returns [], so an
+// empty result is treated as a failure and retried with backoff.
+const fetchMediumWithRetry = async (user: string): Promise<Article[]> => {
+  for (let attempt = 0; attempt < MEDIUM_ATTEMPTS; attempt++) {
+    const res = await getMediumPost({ user });
+    if (res && res.length) {
+      return res;
+    }
+    if (attempt < MEDIUM_ATTEMPTS - 1) {
+      await new Promise((resolve) => setTimeout(resolve, 1000 * (attempt + 1)));
+    }
+  }
+  return [];
+};
+
+const cacheKey = (user: string) => `blog-cache-${user}`;
+
+const readCache = (user: string): Article[] => {
+  try {
+    const raw = localStorage.getItem(cacheKey(user));
+    if (!raw) return [];
+    const parsed: Article[] = JSON.parse(raw);
+    return parsed.map((a) => ({ ...a, publishedAt: new Date(a.publishedAt) }));
+  } catch {
+    return [];
+  }
+};
+
+const writeCache = (user: string, articles: Article[]) => {
+  try {
+    localStorage.setItem(cacheKey(user), JSON.stringify(articles));
+  } catch {
+    // storage unavailable; ignore
+  }
+};
+
 const BlogCard = ({
   loading,
   blog,
@@ -19,21 +57,32 @@ const BlogCard = ({
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
+    let ignore = false;
+    const update = (res: Article[]) => {
+      if (!ignore) setArticles(res);
+    };
+
     if (blog.source === 'medium') {
-      getMediumPost({
-        user: blog.username,
-      }).then((res) => {
-        setArticles(res);
+      fetchMediumWithRetry(blog.username).then((res) => {
+        if (res.length) {
+          writeCache(blog.username, res);
+          update(res);
+        } else {
+          const cached = readCache(blog.username);
+          update(cached.length ? cached : wpBlogs);
+        }
       });
     } else if (blog.source === 'dev') {
       getDevPost({
         user: blog.username,
-      }).then((res) => {
-        setArticles(res);
-      });
+      }).then(update);
     } else {
       setArticles(wpBlogs);
     }
+
+    return () => {
+      ignore = true;
+    };
   }, [blog.source, blog.username]);
 
   const renderSkeleton = () => {
@@ -184,9 +233,7 @@ const BlogCard = ({
                   {loading ? (
                     skeleton({ widthCls: 'w-28', heightCls: 'h-8' })
                   ) : (
-                    <span className="text-base-content opacity-100">
-                      Blogs
-                    </span>
+                    <span className="text-base-content opacity-100">Blogs</span>
                   )}
                 </h5>
               </div>
