@@ -4,7 +4,7 @@ path: "src/assets"
 language: css
 files: 1
 source_hash: 0c47609f8ed9
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/css]
 depends_on: []
 used_by: ["[[src-components]]"]
@@ -23,7 +23,7 @@ used_by: ["[[src-components]]"]
 ### Files
 | File | Lines | Key symbols |
 |---|---:|---|
-| `index.css` | 105 |  |
+| `index.css` | 113 |  |
 <!-- vault:auto:end -->
 
 ## Purpose

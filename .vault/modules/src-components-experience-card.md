@@ -4,7 +4,7 @@ path: "src/components/experience-card"
 language: typescript
 files: 1
 source_hash: e96a7017dde9
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-interfaces]]", "[[src-utils]]"]
 used_by: ["[[src-components]]"]

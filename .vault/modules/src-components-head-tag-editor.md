@@ -4,7 +4,7 @@ path: "src/components/head-tag-editor"
 language: typescript
 files: 1
 source_hash: 543760365f05
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-utils]]"]
 used_by: ["[[src-components]]"]

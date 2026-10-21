@@ -4,7 +4,7 @@ path: "src/components"
 language: typescript
 files: 1
 source_hash: 63925818c91d
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-assets]]", "[[src-components-avatar-card]]", "[[src-components-blog-card]]", "[[src-components-books-card]]", "[[src-components-certification-card]]", "[[src-components-details-card]]", "[[src-components-education-card]]", "[[src-components-error-page]]", "[[src-components-experience-card]]", "[[src-components-external-project-card]]", "[[src-components-footer]]", "[[src-components-github-project-card]]", "[[src-components-head-tag-editor]]", "[[src-components-publication-card]]", "[[src-components-skill-card]]", "[[src-components-theme-changer]]", "[[src-constants]]", "[[src-interfaces]]", "[[src-utils]]"]
 used_by: ["[[src]]"]

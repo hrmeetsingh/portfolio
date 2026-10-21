@@ -3,8 +3,8 @@ type: module
 path: "src/utils"
 language: typescript
 files: 1
-source_hash: c10b49fff3b8
-generated: 2026-10-18
+source_hash: 0dfe12e735b6
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-constants]]", "[[src-data]]", "[[src-interfaces]]"]
 used_by: ["[[src-components]]", "[[src-components-avatar-card]]", "[[src-components-blog-card]]", "[[src-components-books-card]]", "[[src-components-certification-card]]", "[[src-components-details-card]]", "[[src-components-education-card]]", "[[src-components-experience-card]]", "[[src-components-external-project-card]]", "[[src-components-footer]]", "[[src-components-github-project-card]]", "[[src-components-head-tag-editor]]", "[[src-components-publication-card]]", "[[src-components-skill-card]]", "[[src-components-theme-changer]]"]
@@ -23,16 +23,16 @@ used_by: ["[[src-components]]", "[[src-components-avatar-card]]", "[[src-compone
 ### Files
 | File | Lines | Key symbols |
 |---|---:|---|
-| `index.tsx` | 243 | `isDarkishTheme`, `getSanitizedConfig`, `getInitialTheme`, `skeleton`, `setupHotjar`, `ga` |
+| `index.tsx` | 244 | `isDarkishTheme`, `getSanitizedConfig`, `getInitialTheme`, `skeleton`, `setupHotjar`, `ga` |
 
 ### Symbols (first 40)
 - `isDarkishTheme` - src/utils/index.tsx:11
 - `getSanitizedConfig` - src/utils/index.tsx:25
-- `getInitialTheme` - src/utils/index.tsx:164
-- `skeleton` - src/utils/index.tsx:190
-- `setupHotjar` - src/utils/index.tsx:217
-- `ga` - src/utils/index.tsx:224
-- `getLanguageColor` - src/utils/index.tsx:235
+- `getInitialTheme` - src/utils/index.tsx:165
+- `skeleton` - src/utils/index.tsx:191
+- `setupHotjar` - src/utils/index.tsx:218
+- `ga` - src/utils/index.tsx:225
+- `getLanguageColor` - src/utils/index.tsx:236
 <!-- vault:auto:end -->
 
 ## Purpose

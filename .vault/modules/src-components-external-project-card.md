@@ -4,7 +4,7 @@ path: "src/components/external-project-card"
 language: typescript
 files: 1
 source_hash: e209462925bb
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-components-lazy-image]]", "[[src-interfaces]]", "[[src-utils]]"]
 used_by: ["[[src-components]]"]

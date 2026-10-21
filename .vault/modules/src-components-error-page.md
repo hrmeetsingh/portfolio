@@ -4,7 +4,7 @@ path: "src/components/error-page"
 language: typescript
 files: 1
 source_hash: 90fa9bad8e75
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-constants]]"]
 used_by: ["[[src-components]]"]

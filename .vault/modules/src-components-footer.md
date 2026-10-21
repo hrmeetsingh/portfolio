@@ -4,7 +4,7 @@ path: "src/components/footer"
 language: typescript
 files: 1
 source_hash: 263e81aebba6
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-utils]]"]
 used_by: ["[[src-components]]"]

@@ -1,4 +1,5 @@
 import CONFIG from './gitprofile.config';
+import { PROFESSIONAL_THEMES } from './src/constants/professional-themes';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -12,6 +13,7 @@ export default {
     themes: [
       ...CONFIG.themeConfig.themes,
       { procyon: CONFIG.themeConfig.customTheme },
+      PROFESSIONAL_THEMES,
     ],
   },
 };

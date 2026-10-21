@@ -4,7 +4,7 @@ path: "src"
 language: typescript
 files: 2
 source_hash: 51baa1547aa0
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-components]]"]
 used_by: []

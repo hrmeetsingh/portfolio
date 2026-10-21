@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-18",
+  "generated": "2026-10-20",
   "modules": {
     ".": {
-      "hash": "f7d213e8b0fc",
+      "hash": "298148de5191",
       "purpose_hash": "f7d213e8b0fc",
       "slug": "root"
     },
@@ -47,12 +47,12 @@
       "slug": "src-components-avatar-card"
     },
     "src/components/blog-card": {
-      "hash": "a4dd5ea41d4c",
+      "hash": "763618e5e8d1",
       "purpose_hash": "a4dd5ea41d4c",
       "slug": "src-components-blog-card"
     },
     "src/components/books-card": {
-      "hash": "ce62de480a01",
+      "hash": "d14ff08a68dc",
       "purpose_hash": "ce62de480a01",
       "slug": "src-components-books-card"
     },
@@ -122,7 +122,7 @@
       "slug": "src-components-theme-changer"
     },
     "src/constants": {
-      "hash": "6e15e4c5bc51",
+      "hash": "36eb47bdd36d",
       "purpose_hash": "6e15e4c5bc51",
       "slug": "src-constants"
     },
@@ -132,12 +132,12 @@
       "slug": "src-data"
     },
     "src/interfaces": {
-      "hash": "badc7ad2d900",
+      "hash": "f66c628e3ea4",
       "purpose_hash": "badc7ad2d900",
       "slug": "src-interfaces"
     },
     "src/utils": {
-      "hash": "c10b49fff3b8",
+      "hash": "0dfe12e735b6",
       "purpose_hash": "c10b49fff3b8",
       "slug": "src-utils"
     }

@@ -4,7 +4,7 @@ path: "src/data"
 language: json
 files: 1
 source_hash: cae16cb7c31d
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/json]
 depends_on: []
 used_by: ["[[src-utils]]"]

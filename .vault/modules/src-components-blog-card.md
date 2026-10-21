@@ -3,8 +3,8 @@ type: module
 path: "src/components/blog-card"
 language: typescript
 files: 2
-source_hash: a4dd5ea41d4c
-generated: 2026-10-18
+source_hash: 763618e5e8d1
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-components-lazy-image]]", "[[src-interfaces]]", "[[src-utils]]"]
 used_by: ["[[src-components]]"]
@@ -24,7 +24,7 @@ used_by: ["[[src-components]]"]
 | File | Lines | Key symbols |
 |---|---:|---|
 | `fallback-list.tsx` | 42 | `wpBlogs` |
-| `index.tsx` | 206 |  |
+| `index.tsx` | 253 |  |
 
 ### Symbols (first 40)
 - `wpBlogs` - src/components/blog-card/fallback-list.tsx:1

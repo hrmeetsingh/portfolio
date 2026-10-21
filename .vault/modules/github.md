@@ -4,7 +4,7 @@ path: ".github"
 language: yaml
 files: 1
 source_hash: 2db213fcdbce
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/yaml]
 depends_on: []
 used_by: []

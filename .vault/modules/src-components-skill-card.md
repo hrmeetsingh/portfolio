@@ -4,7 +4,7 @@ path: "src/components/skill-card"
 language: typescript
 files: 1
 source_hash: 14b237491cc1
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-utils]]"]
 used_by: ["[[src-components]]"]
