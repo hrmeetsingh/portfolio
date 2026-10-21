@@ -249,15 +249,15 @@ const CONFIG = {
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'wireframe',
+    defaultTheme: 'ledger',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
-    disableSwitch: true,
+    disableSwitch: false,
 
     // Should use the prefers-color-scheme media-query,
     // using user system preferences, instead of the hardcoded defaultTheme
-    respectPrefersColorScheme: false,
+    respectPrefersColorScheme: true,
 
     // Display the ring in Profile picture
     displayAvatarRing: true,
@@ -297,6 +297,9 @@ const CONFIG = {
       'nord',
       'sunset',
       'procyon',
+      'ledger',
+      'graphite',
+      'paper',
     ],
 
     // Custom theme, applied to `procyon` theme

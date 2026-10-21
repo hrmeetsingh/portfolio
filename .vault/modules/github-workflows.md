@@ -4,7 +4,7 @@ path: ".github/workflows"
 language: yaml
 files: 2
 source_hash: bd5a29b17603
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/yaml]
 depends_on: []
 used_by: []

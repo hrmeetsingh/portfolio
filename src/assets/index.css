@@ -13,7 +13,6 @@
 }
 
 @media screen and (min-width: 966px) {
-
   ::-webkit-scrollbar,
   .scroller {
     width: 8px;
@@ -35,6 +34,15 @@ body {
   font-family: 'Nova Round', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='ledger'] body,
+[data-theme='graphite'] body {
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme='paper'] body {
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 h2 {

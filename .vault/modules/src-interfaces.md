@@ -3,8 +3,8 @@ type: module
 path: "src/interfaces"
 language: typescript
 files: 4
-source_hash: badc7ad2d900
-generated: 2026-10-18
+source_hash: f66c628e3ea4
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: []
 used_by: ["[[src-components]]", "[[src-components-avatar-card]]", "[[src-components-blog-card]]", "[[src-components-books-card]]", "[[src-components-certification-card]]", "[[src-components-details-card]]", "[[src-components-education-card]]", "[[src-components-experience-card]]", "[[src-components-external-project-card]]", "[[src-components-github-project-card]]", "[[src-components-publication-card]]", "[[src-components-theme-changer]]", "[[src-utils]]"]
@@ -24,7 +24,7 @@ used_by: ["[[src-components]]", "[[src-components-avatar-card]]", "[[src-compone
 | `article.tsx` | 8 | `Article` |
 | `github-project.tsx` | 8 | `GithubProject` |
 | `profile.tsx` | 7 | `Profile` |
-| `sanitized-config.tsx` | 165 | `SanitizedGithub`, `SanitizedGitHubProjects`, `SanitizedExternalProject`, `SanitizedExternalProjects`, `SanitizedProjects`, `SanitizedSEO` |
+| `sanitized-config.tsx` | 166 | `SanitizedGithub`, `SanitizedGitHubProjects`, `SanitizedExternalProject`, `SanitizedExternalProjects`, `SanitizedProjects`, `SanitizedSEO` |
 
 ### Symbols (first 40)
 - `Article` - src/interfaces/article.tsx:1
@@ -46,9 +46,9 @@ used_by: ["[[src-components]]", "[[src-components-avatar-card]]", "[[src-compone
 - `SanitizedHotjar` - src/interfaces/sanitized-config.tsx:108
 - `SanitizedBlog` - src/interfaces/sanitized-config.tsx:113
 - `SanitizedBooks` - src/interfaces/sanitized-config.tsx:120
-- `SanitizedCustomTheme` - src/interfaces/sanitized-config.tsx:127
-- `SanitizedThemeConfig` - src/interfaces/sanitized-config.tsx:137
-- `SanitizedConfig` - src/interfaces/sanitized-config.tsx:146
+- `SanitizedCustomTheme` - src/interfaces/sanitized-config.tsx:128
+- `SanitizedThemeConfig` - src/interfaces/sanitized-config.tsx:138
+- `SanitizedConfig` - src/interfaces/sanitized-config.tsx:147
 <!-- vault:auto:end -->
 
 ## Purpose

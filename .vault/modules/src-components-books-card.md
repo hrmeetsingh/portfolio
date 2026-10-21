@@ -3,8 +3,8 @@ type: module
 path: "src/components/books-card"
 language: typescript
 files: 1
-source_hash: ce62de480a01
-generated: 2026-10-18
+source_hash: d14ff08a68dc
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: ["[[src-interfaces]]", "[[src-utils]]"]
 used_by: ["[[src-components]]"]
@@ -23,7 +23,7 @@ used_by: ["[[src-components]]"]
 ### Files
 | File | Lines | Key symbols |
 |---|---:|---|
-| `index.tsx` | 254 | `Book`, `BooksCardProps` |
+| `index.tsx` | 253 | `Book`, `BooksCardProps` |
 
 ### Symbols (first 40)
 - `Book` - src/components/books-card/index.tsx:7

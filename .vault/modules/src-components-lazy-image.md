@@ -4,7 +4,7 @@ path: "src/components/lazy-image"
 language: typescript
 files: 1
 source_hash: 2400b1aa852a
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/typescript]
 depends_on: []
 used_by: ["[[src-components-avatar-card]]", "[[src-components-blog-card]]", "[[src-components-external-project-card]]"]

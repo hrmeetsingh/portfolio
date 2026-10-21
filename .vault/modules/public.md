@@ -4,7 +4,7 @@ path: "public"
 language: docs
 files: 1
 source_hash: 7fb9f5d39dec
-generated: 2026-10-18
+generated: 2026-10-20
 tags: [module, lang/docs]
 depends_on: []
 used_by: []
