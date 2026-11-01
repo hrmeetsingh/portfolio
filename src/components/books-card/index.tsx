@@ -32,89 +32,77 @@ const BooksCard: React.FC<BooksCardProps> = ({ loading, books }) => {
       setError(null);
 
       const allBooks: Book[] = [];
+      let feedFailed = false;
 
-      const parseRSSFeed = (
-        xmlString: string,
+      const parseWidget = (
+        widgetJs: string,
         status: 'reading' | 'read',
       ): Book[] => {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-
-        const parserError = xmlDoc.querySelector('parsererror');
-        if (parserError) {
-          throw new Error('Failed to parse RSS feed');
+        const literal = widgetJs.match(
+          /var widget_code = '([\s\S]*?)'\s*\n\s*var widget_div/,
+        );
+        if (!literal) {
+          throw new Error('Unexpected Goodreads widget response');
         }
 
-        const items = xmlDoc.querySelectorAll('item');
-        const parsedBooks: Book[] = [];
+        const html = literal[1].replace(
+          /\\(u[0-9a-fA-F]{4}|.)/g,
+          (_, c: string) => {
+            if (c.length === 5)
+              return String.fromCharCode(parseInt(c.slice(1), 16));
+            return c === 'n' ? '\n' : c === 't' ? '\t' : c === 'r' ? '\r' : c;
+          },
+        );
+        const safeUrl = (raw: string | null | undefined): string => {
+          try {
+            const url = new URL(raw || '', 'https://www.goodreads.com');
+            return url.protocol === 'https:' || url.protocol === 'http:'
+              ? url.href
+              : '';
+          } catch {
+            return '';
+          }
+        };
+        const doc = new DOMParser().parseFromString(html, 'text/html');
 
-        items.forEach((item) => {
-          const title =
-            item.querySelector('title')?.textContent || 'Unknown Title';
-          const author =
-            item.querySelector('author_name')?.textContent || 'Unknown Author';
-          const bookLink = item.querySelector('link')?.textContent || '';
-          const bookId = item.querySelector('book_id')?.textContent || '';
-
-          const description =
-            item.querySelector('description')?.textContent || '';
-          const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
-          const coverUrl = imgMatch ? imgMatch[1] : '';
-
-          parsedBooks.push({
-            title,
-            author,
-            coverUrl,
-            link: bookLink || `https://www.goodreads.com/book/show/${bookId}`,
+        return Array.from(
+          doc.querySelectorAll('[class^="gr_custom_each_container_"]'),
+        ).map((item) => {
+          const titleLink = item.querySelector<HTMLAnchorElement>(
+            '[class^="gr_custom_title_"] a',
+          );
+          return {
+            title: titleLink?.textContent?.trim() || 'Unknown Title',
+            author:
+              item
+                .querySelector('[class^="gr_custom_author_"] a')
+                ?.textContent?.trim() || 'Unknown Author',
+            coverUrl: safeUrl(item.querySelector('img')?.getAttribute('src')),
+            link: safeUrl(titleLink?.getAttribute('href')),
             status,
-          });
+          };
         });
-
-        return parsedBooks;
       };
 
-      const [currentlyReadingResult, readResult] = await Promise.allSettled([
-        axios.get<string>(books.proxyUrl, {
-          params: { shelf: 'currently-reading' },
-          responseType: 'text',
-        }),
-        axios.get<string>(books.proxyUrl, {
+      try {
+        const { data } = await axios.get<string>(books.proxyUrl, {
           params: { shelf: 'read' },
           responseType: 'text',
-        }),
-      ]);
-
-      if (currentlyReadingResult.status === 'fulfilled') {
-        try {
-          const currentlyReadingBooks = parseRSSFeed(
-            currentlyReadingResult.value.data,
-            'reading',
-          );
-          allBooks.push(...currentlyReadingBooks);
-        } catch (err) {
-          console.warn('Failed to parse currently-reading books:', err);
-        }
+        });
+        allBooks.push(...parseWidget(data, 'read'));
+      } catch (err) {
+        console.warn('Failed to load read books:', err);
+        feedFailed = true;
       }
-
-      if (readResult.status === 'fulfilled') {
-        try {
-          const readBooks = parseRSSFeed(readResult.value.data, 'read');
-          allBooks.push(...readBooks);
-        } catch (err) {
-          console.warn('Failed to parse read books:', err);
-        }
-      }
-
-      allBooks.sort((a, b) => {
-        if (a.status === 'reading' && b.status === 'read') return -1;
-        if (a.status === 'read' && b.status === 'reading') return 1;
-        return 0;
-      });
 
       setBooksList(allBooks);
 
       if (allBooks.length === 0) {
-        setError('No books found in your Goodreads shelves');
+        setError(
+          feedFailed
+            ? 'Goodreads feed unavailable (private shelves or changed widget)'
+            : 'No books found in your Goodreads shelves',
+        );
       }
     } catch (err) {
       console.error('Error fetching books:', err);
